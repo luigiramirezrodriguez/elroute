@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import HomePage from './pages/homepage/homepage.components';
-import ShopPage from './pages/shop/shop.components.jsx';
-import SignInandSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.components.jsx';
-import Header from './components/header/header.components.jsx';
-import { auth } from './firebase/firebase.utils'; 
+import ShopPage from './pages/shop/shop.components';
+import SignInandSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.components'; 
+import Header from './components/header/header.components';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils'; 
 
 
 class App extends React.Component { 
@@ -22,12 +22,31 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user }) ;
-      console.log(user.displayName);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      // createUserProfileDocument(user);
+      if(userAuth){
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot => {
+          // console.log(snapShot);
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          }, () => {console.log(this.state);});
+        });
+        
+        this.setState( {currentUser: userAuth });
+      }else{
+        //I added this else.
+        this.setState( {currentUser: '' });
+      }
+
     });
   }
 
+  
   componentWillUnamount() {
     this.unsubscribeFromAuth();
   }
