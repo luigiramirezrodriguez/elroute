@@ -6,3 +6,9 @@ cmd
 >npx create-react-app {name of project}
 >sass / styles
 > react router : npm install react-router-dom
+
+>yarn addd firebase
+>##or
+>nnpm install --save firebase
+
+> copy firebaseConfig 
