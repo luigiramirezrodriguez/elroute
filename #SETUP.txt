@@ -12,3 +12,9 @@ cmd
 >nnpm install --save firebase
 
 > copy firebaseConfig 
+
+=========================
+cmd REDUX
+>npm install redux redux-logger react-redux
+> ##OR
+>yarn add redux redux-logger react-redux
