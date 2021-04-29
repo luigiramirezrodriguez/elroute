@@ -18,3 +18,10 @@ cmd REDUX
 >npm install redux redux-logger react-redux
 > ##OR
 >yarn add redux redux-logger react-redux
+
+
+=====================
+reselect*
+>npm install reselect
+> ##OR
+>yarn add reselect
