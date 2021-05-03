@@ -26,8 +26,18 @@ reselect*
 > ##OR
 >yarn add reselect
 
+
 ======================
+
 sessionstorage && localstorage
 > npm install redux-persist
 > ##OR
 > yarn add redux-persist
+
+======================
+STRIPE**
+4242 4242 4242 4242 - EPX: 01/20 - CW: 123
+
+> npm install react-stripe-checkout
+> ##OR
+> yarn add react-stripe-checkout
