@@ -13,6 +13,7 @@ cmd
 
 > copy firebaseConfig 
 
+babel?
 =========================
 cmd REDUX
 >npm install redux redux-logger react-redux
@@ -34,6 +35,7 @@ sessionstorage && localstorage
 > ##OR
 > yarn add redux-persist
 
+
 ======================
 STRIPE**
 4242 4242 4242 4242 - EPX: 01/20 - CW: 123
@@ -41,3 +43,12 @@ STRIPE**
 > npm install react-stripe-checkout
 > ##OR
 > yarn add react-stripe-checkout
+
+
+=========================
+PRODUCTION? VIA HEROKU
+https://devcenter.heroku.com/articles/heroku-cli#download-and-install
+
+>heroku create elroute --buildpack https://github.com/mars/create-react-app-build.git (no need to run npm build)
+
+>git push heroku master
