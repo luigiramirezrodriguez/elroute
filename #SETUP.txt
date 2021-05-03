@@ -25,3 +25,9 @@ reselect*
 >npm install reselect
 > ##OR
 >yarn add reselect
+
+======================
+sessionstorage && localstorage
+> npm install redux-persist
+> ##OR
+> yarn add redux-persist
